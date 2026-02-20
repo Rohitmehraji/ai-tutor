@@ -1,0 +1,157 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, sans-serif;
+  color: #eef4ff;
+  background: #030712;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.35), transparent 38%),
+    radial-gradient(circle at 100% 0%, rgba(236, 72, 153, 0.2), transparent 36%),
+    #020617;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.4rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.glass {
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  background: rgba(15, 23, 42, 0.64);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.45);
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  color: #93c5fd;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
+  margin-top: 0.35rem;
+}
+
+.subtext {
+  margin-top: 0.6rem;
+  color: #cbd5e1;
+  max-width: 700px;
+}
+
+.primaryBtn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.8rem 1.2rem;
+  background: linear-gradient(135deg, #22d3ee, #3b82f6, #a855f7);
+  color: #eff6ff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.controls h2 {
+  margin-bottom: 0.8rem;
+}
+
+.controlGrid,
+.gridTwo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.9rem;
+}
+
+label {
+  display: grid;
+  gap: 0.45rem;
+  color: #dbeafe;
+}
+
+select {
+  border-radius: 12px;
+  border: 1px solid #334155;
+  background: #0f172a;
+  color: #eef2ff;
+  padding: 0.6rem;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.needsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.7rem;
+}
+
+ul {
+  margin: 0.85rem 0 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.5rem;
+  color: #dbeafe;
+}
+
+.recommendation {
+  margin-top: 0.8rem;
+  background: rgba(30, 64, 175, 0.24);
+  border: 1px solid rgba(147, 197, 253, 0.4);
+  color: #dbeafe;
+  border-radius: 12px;
+  padding: 0.8rem;
+}
+
+.journey {
+  margin-top: 0.9rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.journeyCard {
+  border: 1px solid rgba(96, 165, 250, 0.35);
+  border-radius: 14px;
+  padding: 0.85rem;
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.journeyCard p {
+  margin-top: 0.4rem;
+  color: #cbd5e1;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
