@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-tutor-api
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: ai-tutor-api
+  template:
+    metadata:
+      labels:
+        app: ai-tutor-api
+    spec:
+      containers:
+        - name: api
+          image: your-registry/ai-tutor-api:latest
+          resources:
+            requests:
+              cpu: "250m"
+              memory: "256Mi"
+            limits:
+              cpu: "1"
+              memory: "1Gi"
+          ports:
+            - containerPort: 8000
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: ai-tutor-api-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: ai-tutor-api
+  minReplicas: 4
+  maxReplicas: 40
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          averageUtilization: 70
